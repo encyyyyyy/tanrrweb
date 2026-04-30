@@ -9,7 +9,10 @@
 </head>
 <body>
     <header>
-        <div class="logo">Tan<span>rr</span></div>
+        <a href="index.html" class="logo-container">
+            <img src="app-icon.jpeg" alt="Tanrr Icon" class="app-icon" />
+            <div class="logo">Tan<span>rr</span></div>
+        </a>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -26,20 +29,21 @@
             <h2>1. Information We Collect</h2>
             <p>Tanrr prioritizes your privacy. The information we may collect includes your general location (for real-time UV index and sunlight intensity data), your selected skin type (to ensure safe tanning and Vitamin D calculations), and basic usage metrics to improve the application. We do not personally identify you, and health data remains on your device where possible.</p>
 
-            <h2>2. How We Use Your Information</h2>
+            <h2>2. Screen Time APIs & Family Controls</h2>
+            <p>Tanrr uses Apple's FamilyControls, ManagedSettings, and DeviceActivity for the user-controlled Morning Light lock feature. This feature is entirely wellness-oriented: you intentionally choose apps/categories to block, and complete an outdoor light check to release them. Tanrr does <strong>not</strong> use Screen Time APIs for parental surveillance, hidden monitoring, advertising, analytics, or third-party data sale. All lock coordination state remains strictly within your device's local App Group container.</p>
+
+            <h2>3. How We Use Your Information</h2>
             <p>We use the data collected strictly for the core functionality of the Tanrr app, including: </p>
             <ul>
                 <li>Calculating safe sunlight exposure times.</li>
                 <li>Estimating Vitamin D production based on your location and skin type.</li>
-                <li>Providing customized notifications and timers for sun exposure.</li>
+                <li>Providing customized wellness tracking for your sun sessions.</li>
+                <li>Locally syncing Morning Light lock choices across app targets for your own focus routines.</li>
             </ul>
 
-            <h2>3. Requesting Data Deletion</h2>
-            <p>You have the right to request the deletion of your data or revoke your consent at any time. Because most data is stored locally on your device, you can delete this by uninstalling the application or clearing the app data. For any explicit data deletion requests from our servers, please contact us through our Support page.</p>
+            <h2>4. Requesting Data Deletion</h2>
+            <p>You have the right to request the deletion of your data or revoke your consent at any time. Because most data is stored locally on your device via standard UserDefaults, you can delete this by simply uninstalling the application. For any explicit data deletion requests regarding our servers, please contact us through our Support page.</p>
 
-            <h2>4. Third-Party Services</h2>
-            <p>We may use third-party services (such as weather APIs or analytics tools). These providers have their own privacy policies addressing how they use such information.</p>
-            
             <h2>5. Changes to This Privacy Policy</h2>
             <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
         </div>
@@ -47,12 +51,16 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 Tanrr. All rights reserved.</p>
             <div class="footer-links">
+                <a href="index.html">Home</a>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms & Conditions</a>
                 <a href="support.html">Support</a>
             </div>
+            <div class="medical-disclaimer">
+                <strong>Disclaimer:</strong> Tanrr is a wellness planning app. It does not diagnose, treat, or prevent disease, and it does not tell users to ignore public health sun protection guidance. The app uses environmental inputs to estimate conservative sunlight windows. Users remain responsible for following clinician advice for medical conditions, applying sunscreen, utilizing protective clothing, avoiding sunburn, and managing skin cancer risks.
+            </div>
+            <p class="copyright">&copy; 2026 Tanrr. All rights reserved.</p>
         </div>
     </footer>
 </body>

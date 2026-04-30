@@ -9,7 +9,10 @@
 </head>
 <body>
     <header>
-        <div class="logo">Tan<span>rr</span></div>
+        <a href="index.html" class="logo-container">
+            <img src="app-icon.jpeg" alt="Tanrr Icon" class="app-icon" />
+            <div class="logo">Tan<span>rr</span></div>
+        </a>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -26,36 +29,40 @@
             <h2>Contact Us</h2>
             <p>For immediate assistance or feature requests, please send us an email. We aim to respond to all inquiries within 24-48 hours.</p>
             <ul>
-                <li><strong>Email:</strong> <a href="mailto:support@tanrr.app" style="color: var(--accent-color);">support@tanrr.app</a></li>
+                <li><strong>Email:</strong> <a href="mailto:support@tanrr.app" style="color: var(--accent-pink); font-weight: 600;">support@tanrr.app</a></li>
             </ul>
 
             <h2 style="margin-top: 40px;">Send a Message</h2>
             <form action="#" method="get" onsubmit="event.preventDefault(); alert('Message sent! Our support team will get back to you soon.');" style="margin-top: 20px;">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                    <input type="text" id="name" name="name" required placeholder="Jane Doe">
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    <input type="email" id="email" name="email" required placeholder="jane@example.com">
                 </div>
                 <div class="form-group">
                     <label for="message">Message / Request</label>
                     <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Send Message</button>
+                <button type="submit" class="cta-button">Send Message</button>
             </form>
         </div>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 Tanrr. All rights reserved.</p>
             <div class="footer-links">
+                <a href="index.html">Home</a>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms & Conditions</a>
                 <a href="support.html">Support</a>
             </div>
+            <div class="medical-disclaimer">
+                <strong>Disclaimer:</strong> Tanrr is a wellness planning app. It does not diagnose, treat, or prevent disease, and it does not tell users to ignore public health sun protection guidance. The app uses environmental inputs to estimate conservative sunlight windows. Users remain responsible for following clinician advice for medical conditions, applying sunscreen, utilizing protective clothing, avoiding sunburn, and managing skin cancer risks.
+            </div>
+            <p class="copyright">&copy; 2026 Tanrr. All rights reserved.</p>
         </div>
     </footer>
 </body>
