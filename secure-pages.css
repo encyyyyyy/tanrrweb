@@ -1,0 +1,150 @@
+.accent-link {
+  color: var(--accent-pink);
+  font-weight: 600;
+}
+
+.section-spaced {
+  margin-top: 40px;
+}
+
+.support-form {
+  margin-top: 20px;
+}
+
+.app-review-page {
+  max-width: 560px;
+  width: min(560px, calc(100% - 28px));
+  margin-left: 20px;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.review-shell {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 34px;
+  box-shadow: var(--shadow-soft);
+}
+
+.review-kicker {
+  color: var(--accent-pink);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.review-intro {
+  max-width: 100%;
+}
+
+.review-tab-input {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.review-tab-labels {
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0 24px;
+  padding-bottom: 10px;
+}
+
+.review-tab-labels label {
+  align-items: center;
+  background: #FAFAFA;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 700;
+  min-height: 38px;
+  padding: 8px 14px;
+}
+
+.review-panel {
+  display: none;
+}
+
+#review-overview:checked ~ .review-tab-labels label[for="review-overview"],
+#review-tiktok:checked ~ .review-tab-labels label[for="review-tiktok"],
+#review-instagram:checked ~ .review-tab-labels label[for="review-instagram"],
+#review-urls:checked ~ .review-tab-labels label[for="review-urls"],
+#review-access:checked ~ .review-tab-labels label[for="review-access"] {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: #fff;
+}
+
+#review-overview:checked ~ .review-panels #panel-overview,
+#review-tiktok:checked ~ .review-panels #panel-tiktok,
+#review-instagram:checked ~ .review-panels #panel-instagram,
+#review-urls:checked ~ .review-panels #panel-urls,
+#review-access:checked ~ .review-panels #panel-access {
+  display: block;
+}
+
+.review-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  margin-top: 18px;
+}
+
+.review-card {
+  background: #FAFAFA;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  min-width: 0;
+  padding: 18px;
+}
+
+.review-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.review-card p,
+.review-card li {
+  font-size: 0.98rem;
+}
+
+.review-code {
+  background: #2C211C;
+  border-radius: 10px;
+  color: #FFF8F0;
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+  padding: 12px;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.app-review-page + footer {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
+}
+
+.app-review-page + footer .footer-content {
+  align-items: flex-start;
+  margin-left: 0;
+  margin-right: auto;
+  max-width: 560px;
+}
+
+@media (max-width: 768px) {
+  .review-shell {
+    padding: 28px 20px;
+  }
+}

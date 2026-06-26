@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <title>Tanrr Social Publishing Review</title>
+    <meta name="description" content="Private Tanrr social publishing app review notes for TikTok and Meta reviewers.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="secure-pages.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="app-icon.png" alt="Tanrr Icon" class="app-icon" />
+            <div class="logo">Tan<span>rr</span></div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-content app-review-page">
+        <section class="review-shell">
+            <p class="review-kicker">Private app review notes</p>
+            <h1>Tanrr Social Publishing Review</h1>
+            <p class="review-intro">This page documents the private Tanrr scheduler used to publish Tanrr-owned content to TikTok and Instagram. The scheduler dashboard runs locally on the owner&apos;s Mac and is not exposed publicly.</p>
+
+            <input class="review-tab-input" type="radio" name="review-tabs" id="review-overview" checked>
+            <input class="review-tab-input" type="radio" name="review-tabs" id="review-tiktok">
+            <input class="review-tab-input" type="radio" name="review-tabs" id="review-instagram">
+            <input class="review-tab-input" type="radio" name="review-tabs" id="review-urls">
+            <input class="review-tab-input" type="radio" name="review-tabs" id="review-access">
+
+            <div class="review-tab-labels" aria-label="Review sections">
+                <label for="review-overview">Overview</label>
+                <label for="review-tiktok">TikTok</label>
+                <label for="review-instagram">Instagram</label>
+                <label for="review-urls">URLs</label>
+                <label for="review-access">Access</label>
+            </div>
+
+            <div class="review-panels">
+                <section class="review-panel" id="panel-overview">
+                    <h2>Overview</h2>
+                    <p>Tanrr uses a private local scheduler to prepare captions, videos, and image carousels for six Tanrr-managed social accounts. The app replaces a third-party scheduling service and does not provide public user registration, public posting, or third-party account management.</p>
+                    <div class="review-grid">
+                        <div class="review-card">
+                            <h3>App owner</h3>
+                            <p>Nicholas Conoplia owns and operates Tanrr independently.</p>
+                        </div>
+                        <div class="review-card">
+                            <h3>Purpose</h3>
+                            <p>Schedule and publish Tanrr marketing content to owner-authorized TikTok and Instagram accounts.</p>
+                        </div>
+                        <div class="review-card">
+                            <h3>Public access</h3>
+                            <p>No public dashboard is available. The scheduler UI runs on localhost for the owner only.</p>
+                        </div>
+                        <div class="review-card">
+                            <h3>Data handling</h3>
+                            <p>OAuth tokens are stored locally in encrypted JSON on the owner&apos;s Mac.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="review-panel" id="panel-tiktok">
+                    <h2>TikTok Flow</h2>
+                    <p>The TikTok integration uses the Content Posting API upload-to-inbox workflow, not Direct Post. The owner authorizes each TikTok account, the scheduler uploads the video or photo slideshow, and TikTok sends an inbox notification for final review and posting inside TikTok.</p>
+                    <ul>
+                        <li>Requested scopes: user profile display access and video.upload.</li>
+                        <li>Video posts use inbox upload with file upload from the local scheduler.</li>
+                        <li>Photo slideshows use media upload with verified Tanrr media URLs after domain verification is approved.</li>
+                        <li>Captions are stored in the local scheduler for copy/paste during manual TikTok review when needed.</li>
+                    </ul>
+                </section>
+
+                <section class="review-panel" id="panel-instagram">
+                    <h2>Instagram Flow</h2>
+                    <p>The Instagram integration uses the Instagram Graph API for professional accounts connected to Facebook Pages. Videos publish as Reels by default. Multi-image posts publish as carousel media containers after the scheduler checks container readiness.</p>
+                    <ul>
+                        <li>Requested permissions include instagram_basic and instagram_content_publish.</li>
+                        <li>All Instagram accounts are Tanrr-owned or Tanrr-managed professional accounts.</li>
+                        <li>Captions are submitted through the Instagram publishing container flow.</li>
+                        <li>No public user content is collected through this website.</li>
+                    </ul>
+                </section>
+
+                <section class="review-panel" id="panel-urls">
+                    <h2>URLs</h2>
+                    <p>These are the intended public URLs for platform configuration after the tunnel or domain rewrite is active.</p>
+                    <div class="review-grid">
+                        <div class="review-card">
+                            <h3>TikTok OAuth callback</h3>
+                            <code class="review-code">https://gettanrr.com/api/social/oauth/tiktok/callback</code>
+                        </div>
+                        <div class="review-card">
+                            <h3>Instagram OAuth callback</h3>
+                            <code class="review-code">https://gettanrr.com/api/social/oauth/instagram/callback</code>
+                        </div>
+                        <div class="review-card">
+                            <h3>Public media URL pattern</h3>
+                            <code class="review-code">https://gettanrr.com/api/social/public-media/[private-media-token]/[generated-file]</code>
+                        </div>
+                        <div class="review-card">
+                            <h3>Legal and support</h3>
+                            <p><a href="privacy.html">Privacy Policy</a>, <a href="terms.html">Terms &amp; Conditions</a>, and <a href="support.html">Support</a>.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="review-panel" id="panel-access">
+                    <h2>Access And Security</h2>
+                    <ul>
+                        <li>The scheduler dashboard is localhost-only and is not linked from this website.</li>
+                        <li>The public API listener exposes only OAuth callbacks and tokenized media files.</li>
+                        <li>Media filenames are generated randomly and retained temporarily for publishing workflows.</li>
+                        <li>OAuth state is random, single-use, and expires after a short window.</li>
+                        <li>This review page is intentionally unlisted and noindexed. It does not contain OAuth secrets, account tokens, or private account credentials.</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms &amp; Conditions</a>
+                <a href="support.html">Support</a>
+            </div>
+            <div class="medical-disclaimer">
+                <strong>Disclaimer:</strong> Tanrr is a wellness planning app. It does not diagnose, treat, or prevent disease, and it does not tell users to ignore public health sun protection guidance. The app uses environmental inputs to estimate conservative sunlight windows. Users remain responsible for following clinician advice for medical conditions, applying sunscreen, utilizing protective clothing, avoiding sunburn, and managing skin cancer risks.
+            </div>
+            <p class="copyright">&copy; 2026 Tanrr. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
